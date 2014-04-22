@@ -1,0 +1,33 @@
+{
+  "name": "classlist-toggle-force-polyfill",
+  "version": "0.1.0",
+  "description": "Polyfill DOMTokenList#toggle's force argument",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "testling": "~1.6.1"
+  },
+  "scripts": {
+    "test": "./node_modules/testling/bin/cmd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/orangemug/classlist-toggle-force-polyfill.git"
+  },
+  "testling": {
+    "harness": "mocha-tdd",
+    "browsers": [
+      "ie/10..latest",
+      "firefox/24..latest",
+      "chrome/28..latest",
+      "opera/12.0", "opera/15..latest",
+      "iphone/6..latest",
+      "safari/5.1..latest"
+    ],
+    "harness" : "mocha",
+    "files": "./test/index.js"
+  },
+  "homepage": "https://github.com/orangemug/classlist-toggle-force-polyfill",
+  "license": "MIT"
+}
