@@ -1,4 +1,4 @@
-var origToggle = DOMTokenList.prototype.toggle;
+var origToggle;
 
 // Has the polyfill been applied
 var fixed = false;
@@ -67,6 +67,7 @@ function required(initialValue) {
  */
 function fix() {
   if(required()) {
+    origToggle = DOMTokenList.prototype.toggle;
     fixed = true;
     DOMTokenList.prototype.toggle = method;
     return method;
