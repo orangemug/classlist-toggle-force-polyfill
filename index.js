@@ -23,17 +23,29 @@ function method(val, force) {
 
 /**
  * Test if the fix is required
+ *
+ * @param {Boolean} initialValue if `true` was it initially required?
  * @return {Boolean}
  * @api public
  */
 function required(initialValue) {
-  var ret, el = document.createElement("div");
+  var ret, el;
 
+  // Was it initially required
   if(initialValue && fixed)  {
     return true;
   }
 
+  // Don't try and polyfill if we're totally unsupported
+  if(typeof(window.DOMTokenList) === 'undefined') {
+    return false;
+  }
+
+  // The test element
+  el = document.createElement("div");
+
   // Test force on
+  el.classList.add("t");
   ret = el.classList.toggle("t", true);
   if(ret !== true || !el.classList.contains("t")) {
     return true;
