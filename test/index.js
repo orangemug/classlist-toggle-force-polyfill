@@ -1,5 +1,5 @@
 var assert = require("assert");
-// require("../").fix();
+require("../").fix();
 
 describe("classlist-toggle-force-polyfill", function() {
 
@@ -20,6 +20,12 @@ describe("classlist-toggle-force-polyfill", function() {
       assert.equal(ret, false, "Valid return");
       assert(!this.el.classList.contains('test'), "Class doesn't exist");
     });
+
+    it("regular toggle", function() {
+      var ret = this.el.classList.toggle('test');
+      assert.equal(ret, true, "Valid return");
+      assert(this.el.classList.contains('test'), "Class doesn't exist");
+    });
   });
 
   describe("with existing class", function() {
@@ -37,6 +43,12 @@ describe("classlist-toggle-force-polyfill", function() {
 
     it("force toggle off", function() {
       var ret = this.el.classList.toggle('test', false);
+      assert.equal(ret, false, "Valid return");
+      assert(!this.el.classList.contains('test'), "Class doesn't exist");
+    });
+
+    it("regular toggle", function() {
+      var ret = this.el.classList.toggle('test');
       assert.equal(ret, false, "Valid return");
       assert(!this.el.classList.contains('test'), "Class doesn't exist");
     });

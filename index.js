@@ -1,4 +1,6 @@
 var origToggle = DOMTokenList.prototype.toggle;
+
+// Has the polyfill been applied
 var fixed = false;
 
 /**
@@ -10,19 +12,18 @@ function method(val, force) {
 
   if(force === true) {
     this.add(val);
-    return this.contains(val);
   } else if(force === false) {
     this.remove(val);
-    return this.contains(val);
   } else {
-    return origToggle.apply(this, val);
+    return origToggle.call(this, val);
   }
+  return this.contains(val);
 }
 
 
 /**
  * Test if the fix is required
- * @return {Boolean} 
+ * @return {Boolean}
  * @api public
  */
 function required(initialValue) {
@@ -43,6 +44,8 @@ function required(initialValue) {
   if (ret !== false || el.classList.contains("o")) {
     return true;
   }
+
+  return false;
 }
 
 
