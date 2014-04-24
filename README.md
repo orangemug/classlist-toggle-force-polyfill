@@ -4,6 +4,8 @@ Polyfill DOMTokenList#toggle's force argument
     el.classlist.toggle("classToBeRemoved", false);
     el.classlist.toggle("classToBeAdded", true);
 
+[![browser support](https://ci.testling.com/orangemug/classlist-toggle-force-polyfill.png)](https://ci.testling.com/orangemug/classlist-toggle-force-polyfill)
+
 
 ## Install
 
