@@ -1,7 +1,4 @@
 # classlist-toggle-force-polyfill
-
-**WORK IN PROGRESS DO NOT USE**
-
 Polyfill DOMTokenList#toggle's force argument
 
     el.classlist.toggle("classToBeRemoved", false);

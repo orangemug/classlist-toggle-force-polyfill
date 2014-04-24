@@ -44,7 +44,7 @@ function required(initialValue) {
   // The test element
   el = document.createElement("div");
 
-  // Test force on
+  // Test force on. Add class first to test against normal toggle behaviour.
   el.classList.add("t");
   ret = el.classList.toggle("t", true);
   if(ret !== true || !el.classList.contains("t")) {
